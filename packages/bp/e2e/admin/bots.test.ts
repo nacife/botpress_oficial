@@ -72,7 +72,7 @@ describe('Admin - Bot Management', () => {
     await fillField('#select-bot-templates', 'Welcome Bot') // Using fill instead of select because options are created dynamically
     await page.keyboard.press('Enter')
 
-    await page.click('#checkbox-bot-cloud')
+    await clickOn('#checkbox-bot-cloud')
     await fillField('#bot-api-key', apiKey)
 
     await Promise.all([expectAdminApiCallSuccess('workspace/bots', 'POST'), clickOn('#btn-modal-create-bot')])
